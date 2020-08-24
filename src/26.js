@@ -46,32 +46,40 @@ for (int i = 0; i < len; i++) {
  * @param {number[]} nums
  * @return {number}
  */
-var removeDuplicates = function(nums) {
-  let count = 0;
-  for (var i = 0; i < nums.length; i++) {
-    const cur = nums[i];
-    for (var j = i; j < nums.length-1; j++) {
-      if (cur == nums[j + 1]) {
-        nums[j + 1] = null;
-      }
-    }
-  }
 
-  console.log('tag null',nums)
+ 
+// var removeDuplicates = function(nums) {
+//   let count = 0;
+//   for (var i = 0; i < nums.length; i++) {
+//     const cur = nums[i];
+//     for (var j = i; j < nums.length-1; j++) {
+//       if (cur == nums[j + 1]) {
+//         nums[j + 1] = null;
+//       }
+//     }
+//   }
 
-  for (var i = 0; i < nums.length; i++){
-    if (nums[i] == null) {
-      for(var j = i;j<nums.length-1;j++){
-        if(nums[j+1] != null){
-          nums[i] = nums[j+1];
-          console.log(`replace null`,i,nums[i],nums[j+1],j+1);
-          break;
-        }
-      }
-      
-    }
-  }
-  console.log(nums);
-};
+//   console.log('tag null',nums)
+
+//   for (var i = 0; i < nums.length; i++){
+//     if (nums[i] == null) {
+//       count++;
+//       for(var j = i;j<nums.length-1;j++){
+//         if(nums[j+1] != null){
+//           console.log(`will replace`,i,nums[i],j+1,nums[j+1]);
+//           count--;
+//           const tmp = nums[i];
+//           nums[i] = nums[j+1];
+//           nums[j+1] = tmp;
+//           break;
+//         }
+//       }
+//     }
+//   }
+//   console.log(nums,count);
+//   return nums.length -count;
+// };
 
 removeDuplicates([0,0,1,1,1,2,2,3,3,4]);
+removeDuplicates([0,0,1,1,1]);
+removeDuplicates([0,0,0]);
