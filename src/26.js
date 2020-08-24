@@ -80,6 +80,39 @@ for (int i = 0; i < len; i++) {
 //   return nums.length -count;
 // };
 
+// const removeDuplicates = (nums) => {
+//   let i = 0;
+//   let j = 1;
+//   while (i < nums.length) {
+//     while (j < nums.length) {
+//       if (nums[j] != nums[i]) {
+//         nums[i + 1] = nums[j];
+//         break;
+//       } else {
+//         j++;
+//       }
+//     }
+//     if (j > nums.length - 1) {
+//       break;
+//     }
+//     i++;
+//   }
+//   console.log(nums,i + 1);
+//   return i+1;
+// }
+
+const removeDuplicates = (nums)=>{
+  let size = 1;
+  for (let i = 0; i < nums.length -1;i++){
+    if (nums[i+1] != nums[i]) {
+      nums[size] = nums[i+1];
+      size++;
+    }
+  }
+  console.log(nums,size);
+  return size;
+}
+
 removeDuplicates([0,0,1,1,1,2,2,3,3,4]);
 removeDuplicates([0,0,1,1,1]);
-removeDuplicates([0,0,0]);
+removeDuplicates([1,1,2]);
